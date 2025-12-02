@@ -1080,7 +1080,7 @@ audio {
 	bottom: -200px;
 	opacity: 0.6;
 	z-index: 99;
-	width: 1080px;
+	width: 90px;
 	height: 1350px;
 	background-repeat: no-repeat no-repeat;
 	background-size: 100px 183px;
@@ -1298,7 +1298,26 @@ audio {
         border-color: #fff;
         color: #fff;
         background-color: #466baf;
+	
+ /* FIX BALON KELUAR LAYAR SAAT PORTRAIT */
+@media (max-width: 600px) and (orientation: portrait) {
+    .balloons {
+        width: 90vw !important;   /* mengikuti lebar layar */
+        height: auto !important;  /* tidak mengunci tinggi */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        background-size: 70px 120px !important; /* balon mengecil agar proporsional */
     }
+
+    /* opsional: kalau beberapa balon pakai koordinat manual (misal #b1, #b2, dll) */
+    #b1, #b2, #b3, #b4, #b5, #b6, #b7,
+    #b11, #b22, #b33, #b44, #b55, #b66, #b77 {
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
+}
+
+	}
 
 
 
