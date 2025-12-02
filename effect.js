@@ -1,9 +1,16 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
 $(window).load(function(){
 	$('.loading').fadeOut('fast');
 	$('.container').fadeIn('fast');
 });
 $('document').ready(function(){
-		var vw;
+		#b1, #b2, #b3, #b4, #b5, #b6, #b7 {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+	var vw;
 		$(window).resize(function(){
 			 vw = $(window).width()/2;
 			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7').stop();
@@ -179,6 +186,32 @@ $('document').ready(function(){
 			if(i==50){
 				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
 					$('.cake').fadeIn('fast');
+		/* --- Portrait fullscreen mode (seperti Instagram Story) --- */
+@media screen and (max-width: 768px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        transform: scale(0.68);
+        transform-origin: top center;
+        background-size: cover !important;
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .bannar,
+    .cake,
+    .balloons,
+    .message {
+        transform: scale(0.75);
+        transform-origin: center top;
+    }
+}
+	
 				});
 				
 			}
